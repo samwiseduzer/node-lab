@@ -1,0 +1,31 @@
+<header id="header">
+    <h3>Amerzon</h3>
+    <!-- <span id="displayCity" data-izimodal-open="#modal" data-izimodal-transitionin="fadeInDown">Click here to add a product</span> -->
+</header>
+
+<div id="add">
+    <div autocomplete="off" style="height:157px">
+        <h3 style="margin:10px">ADD A NEW PRODUCT</h3>
+        Title: <input type="text" ng-model="admin.newProduct.title"><br>
+        Price: <input type="number" ng-model="admin.newProduct.price"><br>
+        Image Url: <input type="text" ng-model="admin.newProduct.img"><br>
+        <button id="weatherButton" ng-click="admin.addProduct()">Submit</button>
+    </div>
+</div>
+
+<table id="customers">
+    <tr>
+      <th>Product</th>
+      <th>Price</th>
+      <th>Orders</th>
+      <th>Img Url</th>
+      <th>DELETE</th>
+    </tr>
+    <tr ng-repeat="product in admin.products">
+      <td>{{product.title}}</td>
+      <td>{{product.price}}</td>
+      <td>{{product.orders}}</td>
+      <td style="max-width: 200px; overflow-x: hidden; text-overflow: ellipsis;">{{product.img}}</td>
+      <td><button class="delete-btn" ng-click="admin.remove(product._id)">DELETE</button></td>
+    </tr>
+  </table>

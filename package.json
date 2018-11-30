@@ -3,17 +3,14 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "node app.js",
-    "deploy": "nohup node app.js"
+    "start": "node index.js"
   },
   "dependencies": {
     "body-parser": "^1.18.3",
     "cookie-parser": "~1.3.5",
     "debug": "~2.2.0",
-    "ejs": "~2.3.3",
     "express": "^4.16.4",
     "morgan": "^1.9.1",
-    "nohup": "^0.1.0",
-    "serve-favicon": "^2.5.0"
+    "mongoose": "^5.0.11"
   }
 }

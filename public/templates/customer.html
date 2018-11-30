@@ -1,0 +1,39 @@
+<header id="header">
+    <h3>Amerzon</h3>
+</header>
+
+<h2>CATALOG</h2>
+<table id="customers">
+    <tr>
+        <th>Add to Cart</th>
+        <th>Product</th>
+        <th>Price</th>
+        <th>Img Url</th>
+    </tr>
+    <tr ng-repeat="product in customer.products">
+        <td><input type="checkbox" ng-change="customer.updateCart(product)" ng-model="customer[product._id]"></input></td>
+        <td>{{product.title}}</td>
+        <td>{{product.price}}</td>
+        <td><img ng-src={{product.img}} style="max-height:100px"></td>
+    </tr>
+</table>
+
+<h2>CART</h2>
+<table id="customers">
+    <thead>
+        <tr>
+            <th>Product</th>
+            <th>Price</th>
+            <th>Img Url</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr ng-repeat="product in customer.cart">
+            <td>{{product.title}}</td>
+            <td>{{product.price}}</td>
+            <td><img ng-src={{product.img}} style="max-height:100px"></td>
+        </tr>
+    </tbody>
+</table>
+
+<button ng-click="customer.buy()">BUY</button>
